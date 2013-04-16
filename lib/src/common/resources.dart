@@ -14,13 +14,13 @@ class ColumnResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(String tableId, String columnId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.String tableId, core.String columnId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/columns/{columnId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (columnId == null) paramErrors.add("columnId is required");
     if (columnId != null) urlParams["columnId"] = columnId;
     if (tableId == null) paramErrors.add("tableId is required");
@@ -55,13 +55,13 @@ class ColumnResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Column> get(String tableId, String columnId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Column> get(core.String tableId, core.String columnId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/columns/{columnId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (columnId == null) paramErrors.add("columnId is required");
     if (columnId != null) urlParams["columnId"] = columnId;
     if (tableId == null) paramErrors.add("tableId is required");
@@ -96,13 +96,13 @@ class ColumnResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Column> insert(Column request, String tableId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Column> insert(Column request, core.String tableId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/columns";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (tableId == null) paramErrors.add("tableId is required");
     if (tableId != null) urlParams["tableId"] = tableId;
     if (optParams != null) {
@@ -138,13 +138,13 @@ class ColumnResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<ColumnList> list(String tableId, {int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<ColumnList> list(core.String tableId, {core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/columns";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (pageToken != null) queryParams["pageToken"] = pageToken;
     if (tableId == null) paramErrors.add("tableId is required");
@@ -181,13 +181,13 @@ class ColumnResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Column> patch(Column request, String tableId, String columnId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Column> patch(Column request, core.String tableId, core.String columnId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/columns/{columnId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (columnId == null) paramErrors.add("columnId is required");
     if (columnId != null) urlParams["columnId"] = columnId;
     if (tableId == null) paramErrors.add("tableId is required");
@@ -224,13 +224,13 @@ class ColumnResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Column> update(Column request, String tableId, String columnId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Column> update(Column request, core.String tableId, core.String columnId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/columns/{columnId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (columnId == null) paramErrors.add("columnId is required");
     if (columnId != null) urlParams["columnId"] = columnId;
     if (tableId == null) paramErrors.add("tableId is required");
@@ -273,13 +273,13 @@ class QueryResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Sqlresponse> sql(String sql, {bool hdrs, bool typed, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Sqlresponse> sql(core.String sql, {core.bool hdrs, core.bool typed, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "query";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (hdrs != null) queryParams["hdrs"] = hdrs;
     if (sql == null) paramErrors.add("sql is required");
     if (sql != null) queryParams["sql"] = sql;
@@ -316,13 +316,13 @@ class QueryResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Sqlresponse> sqlGet(String sql, {bool hdrs, bool typed, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Sqlresponse> sqlGet(core.String sql, {core.bool hdrs, core.bool typed, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "query";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (hdrs != null) queryParams["hdrs"] = hdrs;
     if (sql == null) paramErrors.add("sql is required");
     if (sql != null) queryParams["sql"] = sql;
@@ -363,13 +363,13 @@ class StyleResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(String tableId, int styleId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.String tableId, core.int styleId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/styles/{styleId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (styleId == null) paramErrors.add("styleId is required");
     if (styleId != null) urlParams["styleId"] = styleId;
     if (tableId == null) paramErrors.add("tableId is required");
@@ -404,13 +404,13 @@ class StyleResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<StyleSetting> get(String tableId, int styleId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<StyleSetting> get(core.String tableId, core.int styleId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/styles/{styleId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (styleId == null) paramErrors.add("styleId is required");
     if (styleId != null) urlParams["styleId"] = styleId;
     if (tableId == null) paramErrors.add("tableId is required");
@@ -445,13 +445,13 @@ class StyleResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<StyleSetting> insert(StyleSetting request, String tableId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<StyleSetting> insert(StyleSetting request, core.String tableId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/styles";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (tableId == null) paramErrors.add("tableId is required");
     if (tableId != null) urlParams["tableId"] = tableId;
     if (optParams != null) {
@@ -487,13 +487,13 @@ class StyleResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<StyleSettingList> list(String tableId, {int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<StyleSettingList> list(core.String tableId, {core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/styles";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (pageToken != null) queryParams["pageToken"] = pageToken;
     if (tableId == null) paramErrors.add("tableId is required");
@@ -530,13 +530,13 @@ class StyleResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<StyleSetting> patch(StyleSetting request, String tableId, int styleId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<StyleSetting> patch(StyleSetting request, core.String tableId, core.int styleId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/styles/{styleId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (styleId == null) paramErrors.add("styleId is required");
     if (styleId != null) urlParams["styleId"] = styleId;
     if (tableId == null) paramErrors.add("tableId is required");
@@ -573,13 +573,13 @@ class StyleResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<StyleSetting> update(StyleSetting request, String tableId, int styleId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<StyleSetting> update(StyleSetting request, core.String tableId, core.int styleId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/styles/{styleId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (styleId == null) paramErrors.add("styleId is required");
     if (styleId != null) urlParams["styleId"] = styleId;
     if (tableId == null) paramErrors.add("tableId is required");
@@ -620,13 +620,13 @@ class TableResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Table> copy(String tableId, {bool copyPresentation, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Table> copy(core.String tableId, {core.bool copyPresentation, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/copy";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (copyPresentation != null) queryParams["copyPresentation"] = copyPresentation;
     if (tableId == null) paramErrors.add("tableId is required");
     if (tableId != null) urlParams["tableId"] = tableId;
@@ -658,13 +658,13 @@ class TableResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(String tableId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.String tableId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (tableId == null) paramErrors.add("tableId is required");
     if (tableId != null) urlParams["tableId"] = tableId;
     if (optParams != null) {
@@ -695,13 +695,13 @@ class TableResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Table> get(String tableId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Table> get(core.String tableId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (tableId == null) paramErrors.add("tableId is required");
     if (tableId != null) urlParams["tableId"] = tableId;
     if (optParams != null) {
@@ -746,14 +746,14 @@ class TableResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Import> importRows(String tableId, {String content, String contentType, String delimiter, String encoding, int endLine, bool isStrict, int startLine, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Import> importRows(core.String tableId, {core.String content, core.String contentType, core.String delimiter, core.String encoding, core.int endLine, core.bool isStrict, core.int startLine, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/import";
     var uploadUrl = "/upload/fusiontables/v1/tables/{tableId}/import";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (delimiter != null) queryParams["delimiter"] = delimiter;
     if (encoding != null) queryParams["encoding"] = encoding;
     if (endLine != null) queryParams["endLine"] = endLine;
@@ -793,13 +793,13 @@ class TableResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Table> insert(Table request, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Table> insert(Table request, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (optParams != null) {
       optParams.forEach((key, value) {
         if (value != null && queryParams[key] == null) {
@@ -831,13 +831,13 @@ class TableResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<TableList> list({int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<TableList> list({core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (pageToken != null) queryParams["pageToken"] = pageToken;
     if (optParams != null) {
@@ -872,13 +872,13 @@ class TableResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Table> patch(Table request, String tableId, {bool replaceViewDefinition, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Table> patch(Table request, core.String tableId, {core.bool replaceViewDefinition, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (replaceViewDefinition != null) queryParams["replaceViewDefinition"] = replaceViewDefinition;
     if (tableId == null) paramErrors.add("tableId is required");
     if (tableId != null) urlParams["tableId"] = tableId;
@@ -914,13 +914,13 @@ class TableResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Table> update(Table request, String tableId, {bool replaceViewDefinition, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Table> update(Table request, core.String tableId, {core.bool replaceViewDefinition, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (replaceViewDefinition != null) queryParams["replaceViewDefinition"] = replaceViewDefinition;
     if (tableId == null) paramErrors.add("tableId is required");
     if (tableId != null) urlParams["tableId"] = tableId;
@@ -960,13 +960,13 @@ class TemplateResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(String tableId, int templateId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.String tableId, core.int templateId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/templates/{templateId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (tableId == null) paramErrors.add("tableId is required");
     if (tableId != null) urlParams["tableId"] = tableId;
     if (templateId == null) paramErrors.add("templateId is required");
@@ -1001,13 +1001,13 @@ class TemplateResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Template> get(String tableId, int templateId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Template> get(core.String tableId, core.int templateId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/templates/{templateId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (tableId == null) paramErrors.add("tableId is required");
     if (tableId != null) urlParams["tableId"] = tableId;
     if (templateId == null) paramErrors.add("templateId is required");
@@ -1042,13 +1042,13 @@ class TemplateResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Template> insert(Template request, String tableId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Template> insert(Template request, core.String tableId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/templates";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (tableId == null) paramErrors.add("tableId is required");
     if (tableId != null) urlParams["tableId"] = tableId;
     if (optParams != null) {
@@ -1084,13 +1084,13 @@ class TemplateResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<TemplateList> list(String tableId, {int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<TemplateList> list(core.String tableId, {core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/templates";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (pageToken != null) queryParams["pageToken"] = pageToken;
     if (tableId == null) paramErrors.add("tableId is required");
@@ -1127,13 +1127,13 @@ class TemplateResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Template> patch(Template request, String tableId, int templateId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Template> patch(Template request, core.String tableId, core.int templateId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/templates/{templateId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (tableId == null) paramErrors.add("tableId is required");
     if (tableId != null) urlParams["tableId"] = tableId;
     if (templateId == null) paramErrors.add("templateId is required");
@@ -1170,13 +1170,13 @@ class TemplateResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Template> update(Template request, String tableId, int templateId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Template> update(Template request, core.String tableId, core.int templateId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "tables/{tableId}/templates/{templateId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (tableId == null) paramErrors.add("tableId is required");
     if (tableId != null) urlParams["tableId"] = tableId;
     if (templateId == null) paramErrors.add("templateId is required");

@@ -4,25 +4,25 @@ part of fusiontables_v1_api_client;
 class Bucket {
 
   /** Color of line or the interior of a polygon in #RRGGBB format. */
-  String color;
+  core.String color;
 
   /** Icon name used for a point. */
-  String icon;
+  core.String icon;
 
   /** Maximum value in the selected column for a row to be styled according to the bucket color, opacity, icon, or weight. */
-  num max;
+  core.num max;
 
   /** Minimum value in the selected column for a row to be styled according to the bucket color, opacity, icon, or weight. */
-  num min;
+  core.num min;
 
   /** Opacity of the color: 0.0 (transparent) to 1.0 (opaque). */
-  num opacity;
+  core.num opacity;
 
   /** Width of a line (in pixels). */
-  int weight;
+  core.int weight;
 
   /** Create new Bucket from JSON data */
-  Bucket.fromJson(Map json) {
+  Bucket.fromJson(core.Map json) {
     if (json.containsKey("color")) {
       color = json["color"];
     }
@@ -44,8 +44,8 @@ class Bucket {
   }
 
   /** Create JSON Object for Bucket */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (color != null) {
       output["color"] = color;
@@ -70,7 +70,7 @@ class Bucket {
   }
 
   /** Return String representation of Bucket */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -81,19 +81,19 @@ class Column {
   ColumnBaseColumn baseColumn;
 
   /** Identifier for the column. */
-  int columnId;
+  core.int columnId;
 
   /** Type name: a template for an individual column. */
-  String kind;
+  core.String kind;
 
   /** Required name of the column. */
-  String name;
+  core.String name;
 
   /** Required type of the column. */
-  String type;
+  core.String type;
 
   /** Create new Column from JSON data */
-  Column.fromJson(Map json) {
+  Column.fromJson(core.Map json) {
     if (json.containsKey("baseColumn")) {
       baseColumn = new ColumnBaseColumn.fromJson(json["baseColumn"]);
     }
@@ -112,8 +112,8 @@ class Column {
   }
 
   /** Create JSON Object for Column */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (baseColumn != null) {
       output["baseColumn"] = baseColumn.toJson();
@@ -135,7 +135,7 @@ class Column {
   }
 
   /** Return String representation of Column */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -143,13 +143,13 @@ class Column {
 class ColumnBaseColumn {
 
   /** The id of the column in the base table from which this column is derived. */
-  int columnId;
+  core.int columnId;
 
   /** Offset to the entry in the list of base tables in the table definition. */
-  int tableIndex;
+  core.int tableIndex;
 
   /** Create new ColumnBaseColumn from JSON data */
-  ColumnBaseColumn.fromJson(Map json) {
+  ColumnBaseColumn.fromJson(core.Map json) {
     if (json.containsKey("columnId")) {
       columnId = json["columnId"];
     }
@@ -159,8 +159,8 @@ class ColumnBaseColumn {
   }
 
   /** Create JSON Object for ColumnBaseColumn */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (columnId != null) {
       output["columnId"] = columnId;
@@ -173,7 +173,7 @@ class ColumnBaseColumn {
   }
 
   /** Return String representation of ColumnBaseColumn */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -181,19 +181,19 @@ class ColumnBaseColumn {
 class ColumnList {
 
   /** List of all requested columns. */
-  List<Column> items;
+  core.List<Column> items;
 
   /** Type name: a list of all tables. */
-  String kind;
+  core.String kind;
 
   /** Token used to access the next page of this result. No token is displayed if there are no more tokens left. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Total number of columns for the table. */
-  int totalItems;
+  core.int totalItems;
 
   /** Create new ColumnList from JSON data */
-  ColumnList.fromJson(Map json) {
+  ColumnList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -212,11 +212,11 @@ class ColumnList {
   }
 
   /** Create JSON Object for ColumnList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -235,7 +235,7 @@ class ColumnList {
   }
 
   /** Return String representation of ColumnList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -243,18 +243,18 @@ class ColumnList {
 class Geometry {
 
   /** Type: A collection of geometries. */
-  String type;
+  core.String type;
 
   /** Create new Geometry from JSON data */
-  Geometry.fromJson(Map json) {
+  Geometry.fromJson(core.Map json) {
     if (json.containsKey("type")) {
       type = json["type"];
     }
   }
 
   /** Create JSON Object for Geometry */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (type != null) {
       output["type"] = type;
@@ -264,7 +264,7 @@ class Geometry {
   }
 
   /** Return String representation of Geometry */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -272,13 +272,13 @@ class Geometry {
 class Import {
 
   /** Type name: a template for an import request. */
-  String kind;
+  core.String kind;
 
   /** The number of rows received from the import request. */
-  String numRowsReceived;
+  core.String numRowsReceived;
 
   /** Create new Import from JSON data */
-  Import.fromJson(Map json) {
+  Import.fromJson(core.Map json) {
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
@@ -288,8 +288,8 @@ class Import {
   }
 
   /** Create JSON Object for Import */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (kind != null) {
       output["kind"] = kind;
@@ -302,7 +302,7 @@ class Import {
   }
 
   /** Return String representation of Import */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -310,18 +310,18 @@ class Import {
 class Line {
 
   /** Type: A line geometry. */
-  String type;
+  core.String type;
 
   /** Create new Line from JSON data */
-  Line.fromJson(Map json) {
+  Line.fromJson(core.Map json) {
     if (json.containsKey("type")) {
       type = json["type"];
     }
   }
 
   /** Create JSON Object for Line */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (type != null) {
       output["type"] = type;
@@ -331,7 +331,7 @@ class Line {
   }
 
   /** Return String representation of Line */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -339,22 +339,22 @@ class Line {
 class LineStyle {
 
   /** Color of the line in #RRGGBB format. */
-  String strokeColor;
+  core.String strokeColor;
 
   /** Column-value, gradient or buckets styler that is used to determine the line color and opacity. */
   StyleFunction strokeColorStyler;
 
   /** Opacity of the line : 0.0 (transparent) to 1.0 (opaque). */
-  num strokeOpacity;
+  core.num strokeOpacity;
 
   /** Width of the line in pixels. */
-  int strokeWeight;
+  core.int strokeWeight;
 
   /** Column-value or bucket styler that is used to determine the width of the line. */
   StyleFunction strokeWeightStyler;
 
   /** Create new LineStyle from JSON data */
-  LineStyle.fromJson(Map json) {
+  LineStyle.fromJson(core.Map json) {
     if (json.containsKey("strokeColor")) {
       strokeColor = json["strokeColor"];
     }
@@ -373,8 +373,8 @@ class LineStyle {
   }
 
   /** Create JSON Object for LineStyle */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (strokeColor != null) {
       output["strokeColor"] = strokeColor;
@@ -396,7 +396,7 @@ class LineStyle {
   }
 
   /** Return String representation of LineStyle */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -404,13 +404,13 @@ class LineStyle {
 class Point {
 
   /** The coordinates that define the point. */
-  List<num> coordinates;
+  core.List<core.num> coordinates;
 
   /** Point: A point geometry. */
-  String type;
+  core.String type;
 
   /** Create new Point from JSON data */
-  Point.fromJson(Map json) {
+  Point.fromJson(core.Map json) {
     if (json.containsKey("coordinates")) {
       coordinates = [];
       json["coordinates"].forEach((item) {
@@ -423,11 +423,11 @@ class Point {
   }
 
   /** Create JSON Object for Point */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (coordinates != null) {
-      output["coordinates"] = new List();
+      output["coordinates"] = new core.List();
       coordinates.forEach((item) {
         output["coordinates"].add(item);
       });
@@ -440,7 +440,7 @@ class Point {
   }
 
   /** Return String representation of Point */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -448,13 +448,13 @@ class Point {
 class PointStyle {
 
   /** Name of the icon. Use values defined in http://www.google.com/fusiontables/DataSource?dsrcid=308519 */
-  String iconName;
+  core.String iconName;
 
   /** Column or a bucket value from which the icon name is to be determined. */
   StyleFunction iconStyler;
 
   /** Create new PointStyle from JSON data */
-  PointStyle.fromJson(Map json) {
+  PointStyle.fromJson(core.Map json) {
     if (json.containsKey("iconName")) {
       iconName = json["iconName"];
     }
@@ -464,8 +464,8 @@ class PointStyle {
   }
 
   /** Create JSON Object for PointStyle */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (iconName != null) {
       output["iconName"] = iconName;
@@ -478,7 +478,7 @@ class PointStyle {
   }
 
   /** Return String representation of PointStyle */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -486,18 +486,18 @@ class PointStyle {
 class Polygon {
 
   /** Type: A polygon geometry. */
-  String type;
+  core.String type;
 
   /** Create new Polygon from JSON data */
-  Polygon.fromJson(Map json) {
+  Polygon.fromJson(core.Map json) {
     if (json.containsKey("type")) {
       type = json["type"];
     }
   }
 
   /** Create JSON Object for Polygon */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (type != null) {
       output["type"] = type;
@@ -507,7 +507,7 @@ class Polygon {
   }
 
   /** Return String representation of Polygon */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -515,31 +515,31 @@ class Polygon {
 class PolygonStyle {
 
   /** Color of the interior of the polygon in #RRGGBB format. */
-  String fillColor;
+  core.String fillColor;
 
   /** Column-value, gradient, or bucket styler that is used to determine the interior color and opacity of the polygon. */
   StyleFunction fillColorStyler;
 
   /** Opacity of the interior of the polygon: 0.0 (transparent) to 1.0 (opaque). */
-  num fillOpacity;
+  core.num fillOpacity;
 
   /** Color of the polygon border in #RRGGBB format. */
-  String strokeColor;
+  core.String strokeColor;
 
   /** Column-value, gradient or buckets styler that is used to determine the border color and opacity. */
   StyleFunction strokeColorStyler;
 
   /** Opacity of the polygon border: 0.0 (transparent) to 1.0 (opaque). */
-  num strokeOpacity;
+  core.num strokeOpacity;
 
   /** Width of the polyon border in pixels. */
-  int strokeWeight;
+  core.int strokeWeight;
 
   /** Column-value or bucket styler that is used to determine the width of the polygon border. */
   StyleFunction strokeWeightStyler;
 
   /** Create new PolygonStyle from JSON data */
-  PolygonStyle.fromJson(Map json) {
+  PolygonStyle.fromJson(core.Map json) {
     if (json.containsKey("fillColor")) {
       fillColor = json["fillColor"];
     }
@@ -567,8 +567,8 @@ class PolygonStyle {
   }
 
   /** Create JSON Object for PolygonStyle */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (fillColor != null) {
       output["fillColor"] = fillColor;
@@ -599,7 +599,7 @@ class PolygonStyle {
   }
 
   /** Return String representation of PolygonStyle */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -607,13 +607,13 @@ class PolygonStyle {
 class Sqlresponse {
 
   /** Columns in the table. */
-  List<String> columns;
+  core.List<core.String> columns;
 
   /** Type name: a template for an individual table. */
-  String kind;
+  core.String kind;
 
   /** Create new Sqlresponse from JSON data */
-  Sqlresponse.fromJson(Map json) {
+  Sqlresponse.fromJson(core.Map json) {
     if (json.containsKey("columns")) {
       columns = [];
       json["columns"].forEach((item) {
@@ -626,11 +626,11 @@ class Sqlresponse {
   }
 
   /** Create JSON Object for Sqlresponse */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (columns != null) {
-      output["columns"] = new List();
+      output["columns"] = new core.List();
       columns.forEach((item) {
         output["columns"].add(item);
       });
@@ -643,7 +643,7 @@ class Sqlresponse {
   }
 
   /** Return String representation of Sqlresponse */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -651,19 +651,19 @@ class Sqlresponse {
 class StyleFunction {
 
   /** Bucket function that assigns a style based on the range a column value falls into. */
-  List<Bucket> buckets;
+  core.List<Bucket> buckets;
 
   /** Name of the column whose value is used in the style. */
-  String columnName;
+  core.String columnName;
 
   /** Gradient function that interpolates a range of colors based on column value. */
   StyleFunctionGradient gradient;
 
   /** Stylers can be one of three kinds: "fusiontables#fromColumn" if the column value is to be used as is, i.e., the column values can have colors in #RRGGBBAA format or integer line widths or icon names; "fusiontables#gradient" if the styling of the row is to be based on applying the gradient function on the column value; or "fusiontables#buckets" if the styling is to based on the bucket into which the the column value falls. */
-  String kind;
+  core.String kind;
 
   /** Create new StyleFunction from JSON data */
-  StyleFunction.fromJson(Map json) {
+  StyleFunction.fromJson(core.Map json) {
     if (json.containsKey("buckets")) {
       buckets = [];
       json["buckets"].forEach((item) {
@@ -682,11 +682,11 @@ class StyleFunction {
   }
 
   /** Create JSON Object for StyleFunction */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (buckets != null) {
-      output["buckets"] = new List();
+      output["buckets"] = new core.List();
       buckets.forEach((item) {
         output["buckets"].add(item.toJson());
       });
@@ -705,7 +705,7 @@ class StyleFunction {
   }
 
   /** Return String representation of StyleFunction */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -713,16 +713,16 @@ class StyleFunction {
 class StyleFunctionGradient {
 
   /** Array with two or more colors. */
-  List<StyleFunctionGradientColors> colors;
+  core.List<StyleFunctionGradientColors> colors;
 
   /** Higher-end of the interpolation range: rows with this value will be assigned to colors[n-1]. */
-  num max;
+  core.num max;
 
   /** Lower-end of the interpolation range: rows with this value will be assigned to colors[0]. */
-  num min;
+  core.num min;
 
   /** Create new StyleFunctionGradient from JSON data */
-  StyleFunctionGradient.fromJson(Map json) {
+  StyleFunctionGradient.fromJson(core.Map json) {
     if (json.containsKey("colors")) {
       colors = [];
       json["colors"].forEach((item) {
@@ -738,11 +738,11 @@ class StyleFunctionGradient {
   }
 
   /** Create JSON Object for StyleFunctionGradient */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (colors != null) {
-      output["colors"] = new List();
+      output["colors"] = new core.List();
       colors.forEach((item) {
         output["colors"].add(item.toJson());
       });
@@ -758,20 +758,20 @@ class StyleFunctionGradient {
   }
 
   /** Return String representation of StyleFunctionGradient */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class StyleFunctionGradientColors {
 
   /** Color in #RRGGBB format. */
-  String color;
+  core.String color;
 
   /** Opacity of the color: 0.0 (transparent) to 1.0 (opaque). */
-  num opacity;
+  core.num opacity;
 
   /** Create new StyleFunctionGradientColors from JSON data */
-  StyleFunctionGradientColors.fromJson(Map json) {
+  StyleFunctionGradientColors.fromJson(core.Map json) {
     if (json.containsKey("color")) {
       color = json["color"];
     }
@@ -781,8 +781,8 @@ class StyleFunctionGradientColors {
   }
 
   /** Create JSON Object for StyleFunctionGradientColors */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (color != null) {
       output["color"] = color;
@@ -795,7 +795,7 @@ class StyleFunctionGradientColors {
   }
 
   /** Return String representation of StyleFunctionGradientColors */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -803,13 +803,13 @@ class StyleFunctionGradientColors {
 class StyleSetting {
 
   /** Type name: an individual style setting. A StyleSetting contains the style defintions for points, lines, and polygons in a table. Since a table can have any one or all of them, a style definition can have point, line and polygon style definitions. */
-  String kind;
+  core.String kind;
 
   /** Style definition for points in the table. */
   PointStyle markerOptions;
 
   /** Optional name for the style setting. */
-  String name;
+  core.String name;
 
   /** Style definition for polygons in the table. */
   PolygonStyle polygonOptions;
@@ -818,13 +818,13 @@ class StyleSetting {
   LineStyle polylineOptions;
 
   /** Identifier for the style setting (unique only within tables). */
-  int styleId;
+  core.int styleId;
 
   /** Identifier for the table. */
-  String tableId;
+  core.String tableId;
 
   /** Create new StyleSetting from JSON data */
-  StyleSetting.fromJson(Map json) {
+  StyleSetting.fromJson(core.Map json) {
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
@@ -849,8 +849,8 @@ class StyleSetting {
   }
 
   /** Create JSON Object for StyleSetting */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (kind != null) {
       output["kind"] = kind;
@@ -878,7 +878,7 @@ class StyleSetting {
   }
 
   /** Return String representation of StyleSetting */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -886,19 +886,19 @@ class StyleSetting {
 class StyleSettingList {
 
   /** All requested style settings. */
-  List<StyleSetting> items;
+  core.List<StyleSetting> items;
 
   /** Type name: in this case, a list of style settings. */
-  String kind;
+  core.String kind;
 
   /** Token used to access the next page of this result. No token is displayed if there are no more styles left. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Total number of styles for the table. */
-  int totalItems;
+  core.int totalItems;
 
   /** Create new StyleSettingList from JSON data */
-  StyleSettingList.fromJson(Map json) {
+  StyleSettingList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -917,11 +917,11 @@ class StyleSettingList {
   }
 
   /** Create JSON Object for StyleSettingList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -940,7 +940,7 @@ class StyleSettingList {
   }
 
   /** Return String representation of StyleSettingList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -948,37 +948,37 @@ class StyleSettingList {
 class Table {
 
   /** Optional attribution assigned to the table. */
-  String attribution;
+  core.String attribution;
 
   /** Optional link for attribution. */
-  String attributionLink;
+  core.String attributionLink;
 
   /** Optional base table identifier if this table is a view or merged table. */
-  List<String> baseTableIds;
+  core.List<core.String> baseTableIds;
 
   /** Columns in the table. */
-  List<Column> columns;
+  core.List<Column> columns;
 
   /** Optional description assigned to the table. */
-  String description;
+  core.String description;
 
   /** Variable for whether table is exportable. */
-  bool isExportable;
+  core.bool isExportable;
 
   /** Type name: a template for an individual table. */
-  String kind;
+  core.String kind;
 
   /** Name assigned to a table. */
-  String name;
+  core.String name;
 
   /** Optional sql that encodes the table definition for derived tables. */
-  String sql;
+  core.String sql;
 
   /** Encrypted unique alphanumeric identifier for the table. */
-  String tableId;
+  core.String tableId;
 
   /** Create new Table from JSON data */
-  Table.fromJson(Map json) {
+  Table.fromJson(core.Map json) {
     if (json.containsKey("attribution")) {
       attribution = json["attribution"];
     }
@@ -1018,8 +1018,8 @@ class Table {
   }
 
   /** Create JSON Object for Table */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (attribution != null) {
       output["attribution"] = attribution;
@@ -1028,13 +1028,13 @@ class Table {
       output["attributionLink"] = attributionLink;
     }
     if (baseTableIds != null) {
-      output["baseTableIds"] = new List();
+      output["baseTableIds"] = new core.List();
       baseTableIds.forEach((item) {
         output["baseTableIds"].add(item);
       });
     }
     if (columns != null) {
-      output["columns"] = new List();
+      output["columns"] = new core.List();
       columns.forEach((item) {
         output["columns"].add(item.toJson());
       });
@@ -1062,7 +1062,7 @@ class Table {
   }
 
   /** Return String representation of Table */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1070,16 +1070,16 @@ class Table {
 class TableList {
 
   /** List of all requested tables. */
-  List<Table> items;
+  core.List<Table> items;
 
   /** Type name: a list of all tables. */
-  String kind;
+  core.String kind;
 
   /** Token used to access the next page of this result. No token is displayed if there are no more tokens left. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new TableList from JSON data */
-  TableList.fromJson(Map json) {
+  TableList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -1095,11 +1095,11 @@ class TableList {
   }
 
   /** Create JSON Object for TableList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1115,7 +1115,7 @@ class TableList {
   }
 
   /** Return String representation of TableList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1123,25 +1123,25 @@ class TableList {
 class Template {
 
   /** List of columns from which the template is to be automatically constructed. Only one of body or automaticColumns can be specified. */
-  List<String> automaticColumnNames;
+  core.List<core.String> automaticColumnNames;
 
   /** Body of the template. It contains HTML with {column_name} to insert values from a particular column. The body is sanitized to remove certain tags, e.g., script. Only one of body or automaticColumns can be specified. */
-  String body;
+  core.String body;
 
   /** Type name: a template for the info window contents. The template can either include an HTML body or a list of columns from which the template is computed automatically. */
-  String kind;
+  core.String kind;
 
   /** Optional name assigned to a template. */
-  String name;
+  core.String name;
 
   /** Identifier for the table for which the template is defined. */
-  String tableId;
+  core.String tableId;
 
   /** Identifier for the template, unique within the context of a particular table. */
-  int templateId;
+  core.int templateId;
 
   /** Create new Template from JSON data */
-  Template.fromJson(Map json) {
+  Template.fromJson(core.Map json) {
     if (json.containsKey("automaticColumnNames")) {
       automaticColumnNames = [];
       json["automaticColumnNames"].forEach((item) {
@@ -1166,11 +1166,11 @@ class Template {
   }
 
   /** Create JSON Object for Template */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (automaticColumnNames != null) {
-      output["automaticColumnNames"] = new List();
+      output["automaticColumnNames"] = new core.List();
       automaticColumnNames.forEach((item) {
         output["automaticColumnNames"].add(item);
       });
@@ -1195,7 +1195,7 @@ class Template {
   }
 
   /** Return String representation of Template */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1203,19 +1203,19 @@ class Template {
 class TemplateList {
 
   /** List of all requested templates. */
-  List<Template> items;
+  core.List<Template> items;
 
   /** Type name: a list of all templates. */
-  String kind;
+  core.String kind;
 
   /** Token used to access the next page of this result. No token is displayed if there are no more tokens left. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Total number of templates for the table. */
-  int totalItems;
+  core.int totalItems;
 
   /** Create new TemplateList from JSON data */
-  TemplateList.fromJson(Map json) {
+  TemplateList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -1234,11 +1234,11 @@ class TemplateList {
   }
 
   /** Create JSON Object for TemplateList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1257,7 +1257,7 @@ class TemplateList {
   }
 
   /** Return String representation of TemplateList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
