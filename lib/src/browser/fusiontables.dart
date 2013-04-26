@@ -4,16 +4,16 @@ part of fusiontables_v1_api_browser;
 /** API for working with Fusion Tables data. */
 class Fusiontables extends BrowserClient {
 
-  ColumnResource _column;
-  ColumnResource get column => _column;
-  QueryResource _query;
-  QueryResource get query => _query;
-  StyleResource _style;
-  StyleResource get style => _style;
-  TableResource _table;
-  TableResource get table => _table;
-  TemplateResource _template;
-  TemplateResource get template => _template;
+  ColumnResource_ _column;
+  ColumnResource_ get column => _column;
+  QueryResource_ _query;
+  QueryResource_ get query => _query;
+  StyleResource_ _style;
+  StyleResource_ get style => _style;
+  TableResource_ _table;
+  TableResource_ get table => _table;
+  TemplateResource_ _template;
+  TemplateResource_ get template => _template;
 
   /** OAuth Scope2: Manage your Fusion Tables */
   static const core.String FUSIONTABLES_SCOPE = "https://www.googleapis.com/auth/fusiontables";
@@ -73,10 +73,10 @@ class Fusiontables extends BrowserClient {
   Fusiontables([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/fusiontables/v1/";
     rootUrl = "https://www.googleapis.com:443/";
-    _column = new ColumnResource(this);
-    _query = new QueryResource(this);
-    _style = new StyleResource(this);
-    _table = new TableResource(this);
-    _template = new TemplateResource(this);
+    _column = new ColumnResource_(this);
+    _query = new QueryResource_(this);
+    _style = new StyleResource_(this);
+    _table = new TableResource_(this);
+    _template = new TemplateResource_(this);
   }
 }

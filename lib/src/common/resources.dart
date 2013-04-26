@@ -1,8 +1,8 @@
 part of fusiontables_v1_api_client;
 
-class ColumnResource extends Resource {
+class ColumnResource_ extends Resource {
 
-  ColumnResource(Client client) : super(client) {
+  ColumnResource_(Client client) : super(client) {
   }
 
   /**
@@ -34,7 +34,7 @@ class ColumnResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -75,7 +75,7 @@ class ColumnResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -114,7 +114,7 @@ class ColumnResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -158,7 +158,7 @@ class ColumnResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -201,7 +201,7 @@ class ColumnResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -244,7 +244,7 @@ class ColumnResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -257,9 +257,9 @@ class ColumnResource extends Resource {
   }
 }
 
-class QueryResource extends Resource {
+class QueryResource_ extends Resource {
 
-  QueryResource(Client client) : super(client) {
+  QueryResource_(Client client) : super(client) {
   }
 
   /**
@@ -293,7 +293,7 @@ class QueryResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -336,7 +336,7 @@ class QueryResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -349,9 +349,9 @@ class QueryResource extends Resource {
   }
 }
 
-class StyleResource extends Resource {
+class StyleResource_ extends Resource {
 
-  StyleResource(Client client) : super(client) {
+  StyleResource_(Client client) : super(client) {
   }
 
   /**
@@ -383,7 +383,7 @@ class StyleResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -424,7 +424,7 @@ class StyleResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -463,7 +463,7 @@ class StyleResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -507,7 +507,7 @@ class StyleResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -550,7 +550,7 @@ class StyleResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -593,7 +593,7 @@ class StyleResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -606,9 +606,9 @@ class StyleResource extends Resource {
   }
 }
 
-class TableResource extends Resource {
+class TableResource_ extends Resource {
 
-  TableResource(Client client) : super(client) {
+  TableResource_(Client client) : super(client) {
   }
 
   /**
@@ -639,7 +639,7 @@ class TableResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -676,7 +676,7 @@ class TableResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -713,7 +713,7 @@ class TableResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -770,7 +770,7 @@ class TableResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -782,6 +782,58 @@ class TableResource extends Resource {
     }
     response
       .then((data) => completer.complete(new Import.fromJson(data)))
+      .catchError((e) { completer.completeError(e); return true; });
+    return completer.future;
+  }
+
+  /**
+   * Import a new table.
+   *
+   * [name] - The name to be assigned to the new table.
+   *
+   * [content] - Base64 Data of the file content to be uploaded
+   *
+   * [contentType] - MimeType of the file to be uploaded
+   *
+   * [delimiter] - The delimiter used to separate cell values. This can only consist of a single character. Default is ','.
+   *
+   * [encoding] - The encoding of the content. Default is UTF-8. Use 'auto-detect' if you are unsure of the encoding.
+   *
+   * [optParams] - Additional query parameters
+   */
+  async.Future<Table> importTable(core.String name, {core.String content, core.String contentType, core.String delimiter, core.String encoding, core.Map optParams}) {
+    var completer = new async.Completer();
+    var url = "tables/import";
+    var uploadUrl = "/upload/fusiontables/v1/tables/import";
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
+
+    var paramErrors = new core.List();
+    if (delimiter != null) queryParams["delimiter"] = delimiter;
+    if (encoding != null) queryParams["encoding"] = encoding;
+    if (name == null) paramErrors.add("name is required");
+    if (name != null) queryParams["name"] = name;
+    if (optParams != null) {
+      optParams.forEach((key, value) {
+        if (value != null && queryParams[key] == null) {
+          queryParams[key] = value;
+        }
+      });
+    }
+
+    if (!paramErrors.isEmpty) {
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
+      return completer.future;
+    }
+
+    var response;
+    if (?content && content != null) {
+      response = _client.upload(uploadUrl, "POST", null, content, contentType, urlParams: urlParams, queryParams: queryParams);
+    } else {
+      response = _client.request(url, "POST", urlParams: urlParams, queryParams: queryParams);
+    }
+    response
+      .then((data) => completer.complete(new Table.fromJson(data)))
       .catchError((e) { completer.completeError(e); return true; });
     return completer.future;
   }
@@ -809,7 +861,7 @@ class TableResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -849,7 +901,7 @@ class TableResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -891,7 +943,7 @@ class TableResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -933,7 +985,7 @@ class TableResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -946,9 +998,9 @@ class TableResource extends Resource {
   }
 }
 
-class TemplateResource extends Resource {
+class TemplateResource_ extends Resource {
 
-  TemplateResource(Client client) : super(client) {
+  TemplateResource_(Client client) : super(client) {
   }
 
   /**
@@ -980,7 +1032,7 @@ class TemplateResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -1021,7 +1073,7 @@ class TemplateResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -1060,7 +1112,7 @@ class TemplateResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -1104,7 +1156,7 @@ class TemplateResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -1147,7 +1199,7 @@ class TemplateResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -1190,7 +1242,7 @@ class TemplateResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
