@@ -275,7 +275,7 @@ class Import {
   core.String kind;
 
   /** The number of rows received from the import request. */
-  core.String numRowsReceived;
+  core.int numRowsReceived;
 
   /** Create new Import from JSON data */
   Import.fromJson(core.Map json) {

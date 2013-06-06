@@ -72,7 +72,7 @@ class Fusiontables extends BrowserClient {
 
   Fusiontables([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/fusiontables/v1/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _column = new ColumnResource_(this);
     _query = new QueryResource_(this);
     _style = new StyleResource_(this);
