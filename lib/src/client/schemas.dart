@@ -283,7 +283,11 @@ class Import {
       kind = json["kind"];
     }
     if (json.containsKey("numRowsReceived")) {
-      numRowsReceived = json["numRowsReceived"];
+      if(json["numRowsReceived"] is core.String){
+        numRowsReceived = core.int.parse(json["numRowsReceived"]);
+      }else{
+        numRowsReceived = json["numRowsReceived"];
+      }
     }
   }
 
