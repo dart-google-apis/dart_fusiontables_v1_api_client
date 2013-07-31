@@ -1,4 +1,4 @@
-part of fusiontables_v1_api_client;
+part of fusiontables_v1_api;
 
 /** Specifies the minimum and maximum values, the color, opacity, icon and weight of a bucket within a StyleSetting. */
 class Bucket {
@@ -195,10 +195,7 @@ class ColumnList {
   /** Create new ColumnList from JSON data */
   ColumnList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Column.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Column.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -216,10 +213,7 @@ class ColumnList {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -242,11 +236,22 @@ class ColumnList {
 /** Represents a Geometry object. */
 class Geometry {
 
+  /** The list of geometries in this geometry collection. */
+  core.List<core.Object> geometries;
+
+  core.Object geometry;
+
   /** Type: A collection of geometries. */
   core.String type;
 
   /** Create new Geometry from JSON data */
   Geometry.fromJson(core.Map json) {
+    if (json.containsKey("geometries")) {
+      geometries = json["geometries"].toList();
+    }
+    if (json.containsKey("geometry")) {
+      geometry = json["geometry"];
+    }
     if (json.containsKey("type")) {
       type = json["type"];
     }
@@ -256,6 +261,12 @@ class Geometry {
   core.Map toJson() {
     var output = new core.Map();
 
+    if (geometries != null) {
+      output["geometries"] = geometries.toList();
+    }
+    if (geometry != null) {
+      output["geometry"] = geometry;
+    }
     if (type != null) {
       output["type"] = type;
     }
@@ -283,11 +294,7 @@ class Import {
       kind = json["kind"];
     }
     if (json.containsKey("numRowsReceived")) {
-      if(json["numRowsReceived"] is core.String){
-        numRowsReceived = core.int.parse(json["numRowsReceived"]);
-      }else{
-        numRowsReceived = json["numRowsReceived"];
-      }
+      numRowsReceived = (json["numRowsReceived"] is core.String) ? core.int.parse(json["numRowsReceived"]) : json["numRowsReceived"];
     }
   }
 
@@ -313,11 +320,17 @@ class Import {
 /** Represents a line geometry. */
 class Line {
 
+  /** The coordinates that define the line. */
+  core.List<core.List<core.num>> coordinates;
+
   /** Type: A line geometry. */
   core.String type;
 
   /** Create new Line from JSON data */
   Line.fromJson(core.Map json) {
+    if (json.containsKey("coordinates")) {
+      coordinates = json["coordinates"].map((coordinatesItem) => coordinatesItem.toList()).toList();
+    }
     if (json.containsKey("type")) {
       type = json["type"];
     }
@@ -327,6 +340,9 @@ class Line {
   core.Map toJson() {
     var output = new core.Map();
 
+    if (coordinates != null) {
+      output["coordinates"] = coordinates.map((coordinatesItem) => coordinatesItem.toList()).toList();
+    }
     if (type != null) {
       output["type"] = type;
     }
@@ -416,10 +432,7 @@ class Point {
   /** Create new Point from JSON data */
   Point.fromJson(core.Map json) {
     if (json.containsKey("coordinates")) {
-      coordinates = [];
-      json["coordinates"].forEach((item) {
-        coordinates.add(item);
-      });
+      coordinates = json["coordinates"].toList();
     }
     if (json.containsKey("type")) {
       type = json["type"];
@@ -431,10 +444,7 @@ class Point {
     var output = new core.Map();
 
     if (coordinates != null) {
-      output["coordinates"] = new core.List();
-      coordinates.forEach((item) {
-        output["coordinates"].add(item);
-      });
+      output["coordinates"] = coordinates.toList();
     }
     if (type != null) {
       output["type"] = type;
@@ -489,11 +499,17 @@ class PointStyle {
 /** Represents a polygon object. */
 class Polygon {
 
+  /** The coordinates that define the polygon. */
+  core.List<core.List<core.List<core.num>>> coordinates;
+
   /** Type: A polygon geometry. */
   core.String type;
 
   /** Create new Polygon from JSON data */
   Polygon.fromJson(core.Map json) {
+    if (json.containsKey("coordinates")) {
+      coordinates = json["coordinates"].map((coordinatesItem) => coordinatesItem.map((coordinatesItem2) => coordinatesItem2.toList()).toList()).toList();
+    }
     if (json.containsKey("type")) {
       type = json["type"];
     }
@@ -503,6 +519,9 @@ class Polygon {
   core.Map toJson() {
     var output = new core.Map();
 
+    if (coordinates != null) {
+      output["coordinates"] = coordinates.map((coordinatesItem) => coordinatesItem.map((coordinatesItem2) => coordinatesItem2.toList()).toList()).toList();
+    }
     if (type != null) {
       output["type"] = type;
     }
@@ -616,16 +635,19 @@ class Sqlresponse {
   /** Type name: a template for an individual table. */
   core.String kind;
 
+  /** The rows in the table. For each cell we print out whatever cell value (e.g., numeric, string) exists. Thus it is important that each cell contains only one value. */
+  core.List<core.List<core.Object>> rows;
+
   /** Create new Sqlresponse from JSON data */
   Sqlresponse.fromJson(core.Map json) {
     if (json.containsKey("columns")) {
-      columns = [];
-      json["columns"].forEach((item) {
-        columns.add(item);
-      });
+      columns = json["columns"].toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
+    }
+    if (json.containsKey("rows")) {
+      rows = json["rows"].map((rowsItem) => rowsItem.toList()).toList();
     }
   }
 
@@ -634,13 +656,13 @@ class Sqlresponse {
     var output = new core.Map();
 
     if (columns != null) {
-      output["columns"] = new core.List();
-      columns.forEach((item) {
-        output["columns"].add(item);
-      });
+      output["columns"] = columns.toList();
     }
     if (kind != null) {
       output["kind"] = kind;
+    }
+    if (rows != null) {
+      output["rows"] = rows.map((rowsItem) => rowsItem.toList()).toList();
     }
 
     return output;
@@ -669,10 +691,7 @@ class StyleFunction {
   /** Create new StyleFunction from JSON data */
   StyleFunction.fromJson(core.Map json) {
     if (json.containsKey("buckets")) {
-      buckets = [];
-      json["buckets"].forEach((item) {
-        buckets.add(new Bucket.fromJson(item));
-      });
+      buckets = json["buckets"].map((bucketsItem) => new Bucket.fromJson(bucketsItem)).toList();
     }
     if (json.containsKey("columnName")) {
       columnName = json["columnName"];
@@ -690,10 +709,7 @@ class StyleFunction {
     var output = new core.Map();
 
     if (buckets != null) {
-      output["buckets"] = new core.List();
-      buckets.forEach((item) {
-        output["buckets"].add(item.toJson());
-      });
+      output["buckets"] = buckets.map((bucketsItem) => bucketsItem.toJson()).toList();
     }
     if (columnName != null) {
       output["columnName"] = columnName;
@@ -728,10 +744,7 @@ class StyleFunctionGradient {
   /** Create new StyleFunctionGradient from JSON data */
   StyleFunctionGradient.fromJson(core.Map json) {
     if (json.containsKey("colors")) {
-      colors = [];
-      json["colors"].forEach((item) {
-        colors.add(new StyleFunctionGradientColors.fromJson(item));
-      });
+      colors = json["colors"].map((colorsItem) => new StyleFunctionGradientColors.fromJson(colorsItem)).toList();
     }
     if (json.containsKey("max")) {
       max = json["max"];
@@ -746,10 +759,7 @@ class StyleFunctionGradient {
     var output = new core.Map();
 
     if (colors != null) {
-      output["colors"] = new core.List();
-      colors.forEach((item) {
-        output["colors"].add(item.toJson());
-      });
+      output["colors"] = colors.map((colorsItem) => colorsItem.toJson()).toList();
     }
     if (max != null) {
       output["max"] = max;
@@ -904,10 +914,7 @@ class StyleSettingList {
   /** Create new StyleSettingList from JSON data */
   StyleSettingList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new StyleSetting.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new StyleSetting.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -925,10 +932,7 @@ class StyleSettingList {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -990,16 +994,10 @@ class Table {
       attributionLink = json["attributionLink"];
     }
     if (json.containsKey("baseTableIds")) {
-      baseTableIds = [];
-      json["baseTableIds"].forEach((item) {
-        baseTableIds.add(item);
-      });
+      baseTableIds = json["baseTableIds"].toList();
     }
     if (json.containsKey("columns")) {
-      columns = [];
-      json["columns"].forEach((item) {
-        columns.add(new Column.fromJson(item));
-      });
+      columns = json["columns"].map((columnsItem) => new Column.fromJson(columnsItem)).toList();
     }
     if (json.containsKey("description")) {
       description = json["description"];
@@ -1032,16 +1030,10 @@ class Table {
       output["attributionLink"] = attributionLink;
     }
     if (baseTableIds != null) {
-      output["baseTableIds"] = new core.List();
-      baseTableIds.forEach((item) {
-        output["baseTableIds"].add(item);
-      });
+      output["baseTableIds"] = baseTableIds.toList();
     }
     if (columns != null) {
-      output["columns"] = new core.List();
-      columns.forEach((item) {
-        output["columns"].add(item.toJson());
-      });
+      output["columns"] = columns.map((columnsItem) => columnsItem.toJson()).toList();
     }
     if (description != null) {
       output["description"] = description;
@@ -1085,10 +1077,7 @@ class TableList {
   /** Create new TableList from JSON data */
   TableList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Table.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Table.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -1103,10 +1092,7 @@ class TableList {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -1147,10 +1133,7 @@ class Template {
   /** Create new Template from JSON data */
   Template.fromJson(core.Map json) {
     if (json.containsKey("automaticColumnNames")) {
-      automaticColumnNames = [];
-      json["automaticColumnNames"].forEach((item) {
-        automaticColumnNames.add(item);
-      });
+      automaticColumnNames = json["automaticColumnNames"].toList();
     }
     if (json.containsKey("body")) {
       body = json["body"];
@@ -1174,10 +1157,7 @@ class Template {
     var output = new core.Map();
 
     if (automaticColumnNames != null) {
-      output["automaticColumnNames"] = new core.List();
-      automaticColumnNames.forEach((item) {
-        output["automaticColumnNames"].add(item);
-      });
+      output["automaticColumnNames"] = automaticColumnNames.toList();
     }
     if (body != null) {
       output["body"] = body;
@@ -1221,10 +1201,7 @@ class TemplateList {
   /** Create new TemplateList from JSON data */
   TemplateList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Template.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Template.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -1242,10 +1219,7 @@ class TemplateList {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -1265,3 +1239,16 @@ class TemplateList {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}

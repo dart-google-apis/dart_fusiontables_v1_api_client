@@ -1,9 +1,11 @@
-part of fusiontables_v1_api_client;
+part of fusiontables_v1_api;
 
-class ColumnResource_ extends Resource {
+class ColumnResource_ {
 
-  ColumnResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ColumnResource_(Client client) :
+      _client = client;
 
   /**
    * Deletes the column.
@@ -232,10 +234,12 @@ class ColumnResource_ extends Resource {
   }
 }
 
-class QueryResource_ extends Resource {
+class QueryResource_ {
 
-  QueryResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  QueryResource_(Client client) :
+      _client = client;
 
   /**
    * Executes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/DESCRIBE/CREATE statement.
@@ -316,10 +320,12 @@ class QueryResource_ extends Resource {
   }
 }
 
-class StyleResource_ extends Resource {
+class StyleResource_ {
 
-  StyleResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  StyleResource_(Client client) :
+      _client = client;
 
   /**
    * Deletes a style.
@@ -548,10 +554,12 @@ class StyleResource_ extends Resource {
   }
 }
 
-class TableResource_ extends Resource {
+class TableResource_ {
 
-  TableResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  TableResource_(Client client) :
+      _client = client;
 
   /**
    * Copies a table.
@@ -702,7 +710,7 @@ class TableResource_ extends Resource {
     }
 
     var response;
-    if (?content && content != null) {
+    if (content != null) {
       response = _client.upload(uploadUrl, "POST", null, content, contentType, urlParams: urlParams, queryParams: queryParams);
     } else {
       response = _client.request(url, "POST", urlParams: urlParams, queryParams: queryParams);
@@ -750,7 +758,7 @@ class TableResource_ extends Resource {
     }
 
     var response;
-    if (?content && content != null) {
+    if (content != null) {
       response = _client.upload(uploadUrl, "POST", null, content, contentType, urlParams: urlParams, queryParams: queryParams);
     } else {
       response = _client.request(url, "POST", urlParams: urlParams, queryParams: queryParams);
@@ -903,10 +911,12 @@ class TableResource_ extends Resource {
   }
 }
 
-class TemplateResource_ extends Resource {
+class TemplateResource_ {
 
-  TemplateResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  TemplateResource_(Client client) :
+      _client = client;
 
   /**
    * Deletes a template

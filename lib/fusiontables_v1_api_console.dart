@@ -1,14 +1,21 @@
-library fusiontables_v1_api_console;
+library fusiontables_v1_api.console;
 
-import "fusiontables_v1_api_client.dart";
-export "fusiontables_v1_api_client.dart";
-
-import "dart:core" as core;
-import "dart:io" as io;
-import "dart:async" as async;
-import "dart:json" as JSON;
-import "package:http/http.dart" as http;
 import "package:google_oauth2_client/google_oauth2_console.dart" as oauth2;
 
-part "src/console/console_client.dart";
-part "src/console/fusiontables.dart";
+import 'package:google_fusiontables_v1_api/src/cloud_api_console.dart';
+
+import "package:google_fusiontables_v1_api/fusiontables_v1_api_client.dart";
+
+/** API for working with Fusion Tables data. */
+class Fusiontables extends Client with ConsoleClient {
+
+  /** OAuth Scope2: Manage your Fusion Tables */
+  static const String FUSIONTABLES_SCOPE = "https://www.googleapis.com/auth/fusiontables";
+
+  /** OAuth Scope2: View your Fusion Tables */
+  static const String FUSIONTABLES_READONLY_SCOPE = "https://www.googleapis.com/auth/fusiontables.readonly";
+
+  final oauth2.OAuth2Console auth;
+
+  Fusiontables([oauth2.OAuth2Console this.auth]);
+}
