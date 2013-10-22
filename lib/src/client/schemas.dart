@@ -70,7 +70,7 @@ class Bucket {
   }
 
   /** Return String representation of Bucket */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -135,7 +135,7 @@ class Column {
   }
 
   /** Return String representation of Column */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -173,7 +173,7 @@ class ColumnBaseColumn {
   }
 
   /** Return String representation of ColumnBaseColumn */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -229,7 +229,7 @@ class ColumnList {
   }
 
   /** Return String representation of ColumnList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -275,7 +275,7 @@ class Geometry {
   }
 
   /** Return String representation of Geometry */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -313,7 +313,7 @@ class Import {
   }
 
   /** Return String representation of Import */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -351,7 +351,7 @@ class Line {
   }
 
   /** Return String representation of Line */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -416,7 +416,7 @@ class LineStyle {
   }
 
   /** Return String representation of LineStyle */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -454,7 +454,7 @@ class Point {
   }
 
   /** Return String representation of Point */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -492,7 +492,7 @@ class PointStyle {
   }
 
   /** Return String representation of PointStyle */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -530,7 +530,7 @@ class Polygon {
   }
 
   /** Return String representation of Polygon */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -622,7 +622,7 @@ class PolygonStyle {
   }
 
   /** Return String representation of PolygonStyle */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -669,7 +669,7 @@ class Sqlresponse {
   }
 
   /** Return String representation of Sqlresponse */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -725,7 +725,7 @@ class StyleFunction {
   }
 
   /** Return String representation of StyleFunction */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -772,7 +772,7 @@ class StyleFunctionGradient {
   }
 
   /** Return String representation of StyleFunctionGradient */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -809,7 +809,7 @@ class StyleFunctionGradientColors {
   }
 
   /** Return String representation of StyleFunctionGradientColors */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -892,7 +892,7 @@ class StyleSetting {
   }
 
   /** Return String representation of StyleSetting */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -948,7 +948,7 @@ class StyleSettingList {
   }
 
   /** Return String representation of StyleSettingList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1058,7 +1058,7 @@ class Table {
   }
 
   /** Return String representation of Table */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1105,7 +1105,7 @@ class TableList {
   }
 
   /** Return String representation of TableList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1179,7 +1179,7 @@ class Template {
   }
 
   /** Return String representation of Template */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1235,7 +1235,7 @@ class TemplateList {
   }
 
   /** Return String representation of TemplateList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
