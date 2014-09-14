@@ -911,6 +911,130 @@ class TableResource_ {
   }
 }
 
+class TaskResource_ {
+
+  final Client _client;
+
+  TaskResource_(Client client) :
+      _client = client;
+
+  /**
+   * Deletes the task, unless already started.
+   *
+   * [tableId] - Table from which the task is being deleted.
+   *
+   * [taskId]
+   *
+   * [optParams] - Additional query parameters
+   */
+  async.Future<core.Map> delete(core.String tableId, core.String taskId, {core.Map optParams}) {
+    var url = "tables/{tableId}/tasks/{taskId}";
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
+
+    var paramErrors = new core.List();
+    if (tableId == null) paramErrors.add("tableId is required");
+    if (tableId != null) urlParams["tableId"] = tableId;
+    if (taskId == null) paramErrors.add("taskId is required");
+    if (taskId != null) urlParams["taskId"] = taskId;
+    if (optParams != null) {
+      optParams.forEach((key, value) {
+        if (value != null && queryParams[key] == null) {
+          queryParams[key] = value;
+        }
+      });
+    }
+
+    if (!paramErrors.isEmpty) {
+      throw new core.ArgumentError(paramErrors.join(" / "));
+    }
+
+    var response;
+    response = _client.request(url, "DELETE", urlParams: urlParams, queryParams: queryParams);
+    return response;
+  }
+
+  /**
+   * Retrieves a specific task by its id.
+   *
+   * [tableId] - Table to which the task belongs.
+   *
+   * [taskId]
+   *
+   * [optParams] - Additional query parameters
+   */
+  async.Future<Task> get(core.String tableId, core.String taskId, {core.Map optParams}) {
+    var url = "tables/{tableId}/tasks/{taskId}";
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
+
+    var paramErrors = new core.List();
+    if (tableId == null) paramErrors.add("tableId is required");
+    if (tableId != null) urlParams["tableId"] = tableId;
+    if (taskId == null) paramErrors.add("taskId is required");
+    if (taskId != null) urlParams["taskId"] = taskId;
+    if (optParams != null) {
+      optParams.forEach((key, value) {
+        if (value != null && queryParams[key] == null) {
+          queryParams[key] = value;
+        }
+      });
+    }
+
+    if (!paramErrors.isEmpty) {
+      throw new core.ArgumentError(paramErrors.join(" / "));
+    }
+
+    var response;
+    response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
+    return response
+      .then((data) => new Task.fromJson(data));
+  }
+
+  /**
+   * Retrieves a list of tasks.
+   *
+   * [tableId] - Table whose tasks are being listed.
+   *
+   * [maxResults] - Maximum number of columns to return. Optional. Default is 5.
+   *   Minimum: 0
+   *
+   * [pageToken]
+   *
+   * [startIndex]
+   *
+   * [optParams] - Additional query parameters
+   */
+  async.Future<TaskList> list(core.String tableId, {core.int maxResults, core.String pageToken, core.int startIndex, core.Map optParams}) {
+    var url = "tables/{tableId}/tasks";
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
+
+    var paramErrors = new core.List();
+    if (maxResults != null) queryParams["maxResults"] = maxResults;
+    if (pageToken != null) queryParams["pageToken"] = pageToken;
+    if (startIndex != null) queryParams["startIndex"] = startIndex;
+    if (tableId == null) paramErrors.add("tableId is required");
+    if (tableId != null) urlParams["tableId"] = tableId;
+    if (optParams != null) {
+      optParams.forEach((key, value) {
+        if (value != null && queryParams[key] == null) {
+          queryParams[key] = value;
+        }
+      });
+    }
+
+    if (!paramErrors.isEmpty) {
+      throw new core.ArgumentError(paramErrors.join(" / "));
+    }
+
+    var response;
+    response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
+    return response
+      .then((data) => new TaskList.fromJson(data));
+  }
+}
+
 class TemplateResource_ {
 
   final Client _client;

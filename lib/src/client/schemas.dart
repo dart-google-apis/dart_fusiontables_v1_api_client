@@ -83,6 +83,12 @@ class Column {
   /** Identifier for the column. */
   core.int columnId;
 
+  /** Optional column description. */
+  core.String description;
+
+  /** Optional column predicate. Used to map table to graph data model (subject,predicate,object) See http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#data-model */
+  core.String graph_predicate;
+
   /** Type name: a template for an individual column. */
   core.String kind;
 
@@ -99,6 +105,12 @@ class Column {
     }
     if (json.containsKey("columnId")) {
       columnId = json["columnId"];
+    }
+    if (json.containsKey("description")) {
+      description = json["description"];
+    }
+    if (json.containsKey("graph_predicate")) {
+      graph_predicate = json["graph_predicate"];
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -120,6 +132,12 @@ class Column {
     }
     if (columnId != null) {
       output["columnId"] = columnId;
+    }
+    if (description != null) {
+      output["description"] = description;
+    }
+    if (graph_predicate != null) {
+      output["graph_predicate"] = graph_predicate;
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -183,7 +201,7 @@ class ColumnList {
   /** List of all requested columns. */
   core.List<Column> items;
 
-  /** Type name: a list of all tables. */
+  /** Type name: a list of all columns. */
   core.String kind;
 
   /** Token used to access the next page of this result. No token is displayed if there are no more tokens left. */
@@ -1105,6 +1123,126 @@ class TableList {
   }
 
   /** Return String representation of TableList */
+  core.String toString() => JSON.encode(this.toJson());
+
+}
+
+/** Specifies the id, name and type of a task in a table. */
+class Task {
+
+  /** Type name: a template for an individual task. */
+  core.String kind;
+
+  /** An indication of task progress. */
+  core.String progress;
+
+  /** False while the table is busy with some other task. */
+  core.bool started;
+
+  /** Identifier for the task. */
+  core.int taskId;
+
+  core.String type;
+
+  /** Create new Task from JSON data */
+  Task.fromJson(core.Map json) {
+    if (json.containsKey("kind")) {
+      kind = json["kind"];
+    }
+    if (json.containsKey("progress")) {
+      progress = json["progress"];
+    }
+    if (json.containsKey("started")) {
+      started = json["started"];
+    }
+    if (json.containsKey("taskId")) {
+      taskId = (json["taskId"] is core.String) ? core.int.parse(json["taskId"]) : json["taskId"];
+    }
+    if (json.containsKey("type")) {
+      type = json["type"];
+    }
+  }
+
+  /** Create JSON Object for Task */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (kind != null) {
+      output["kind"] = kind;
+    }
+    if (progress != null) {
+      output["progress"] = progress;
+    }
+    if (started != null) {
+      output["started"] = started;
+    }
+    if (taskId != null) {
+      output["taskId"] = taskId;
+    }
+    if (type != null) {
+      output["type"] = type;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of Task */
+  core.String toString() => JSON.encode(this.toJson());
+
+}
+
+/** Represents a list of tasks in a table. */
+class TaskList {
+
+  /** List of all requested tasks. */
+  core.List<Task> items;
+
+  /** Type name: a list of all tasks. */
+  core.String kind;
+
+  /** Token used to access the next page of this result. No token is displayed if there are no more tokens left. */
+  core.String nextPageToken;
+
+  /** Total number of tasks for the table. */
+  core.int totalItems;
+
+  /** Create new TaskList from JSON data */
+  TaskList.fromJson(core.Map json) {
+    if (json.containsKey("items")) {
+      items = json["items"].map((itemsItem) => new Task.fromJson(itemsItem)).toList();
+    }
+    if (json.containsKey("kind")) {
+      kind = json["kind"];
+    }
+    if (json.containsKey("nextPageToken")) {
+      nextPageToken = json["nextPageToken"];
+    }
+    if (json.containsKey("totalItems")) {
+      totalItems = json["totalItems"];
+    }
+  }
+
+  /** Create JSON Object for TaskList */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (items != null) {
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
+    }
+    if (kind != null) {
+      output["kind"] = kind;
+    }
+    if (nextPageToken != null) {
+      output["nextPageToken"] = nextPageToken;
+    }
+    if (totalItems != null) {
+      output["totalItems"] = totalItems;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of TaskList */
   core.String toString() => JSON.encode(this.toJson());
 
 }

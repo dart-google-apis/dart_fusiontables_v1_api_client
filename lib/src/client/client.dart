@@ -12,6 +12,7 @@ abstract class Client extends ClientBase {
   QueryResource_ get query => new QueryResource_(this);
   StyleResource_ get style => new StyleResource_(this);
   TableResource_ get table => new TableResource_(this);
+  TaskResource_ get task => new TaskResource_(this);
   TemplateResource_ get template => new TemplateResource_(this);
 
   //

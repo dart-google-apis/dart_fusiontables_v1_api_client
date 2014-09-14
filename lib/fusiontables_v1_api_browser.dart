@@ -6,6 +6,7 @@ import 'package:google_fusiontables_v1_api/src/browser_client.dart';
 import "package:google_fusiontables_v1_api/fusiontables_v1_api_client.dart";
 
 /** API for working with Fusion Tables data. */
+@deprecated
 class Fusiontables extends Client with BrowserClient {
 
   /** OAuth Scope2: Manage your Fusion Tables */
